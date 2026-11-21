@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
+:root {
+  font-family: Kanit, Tahoma, sans-serif;
+  color: #26354b;
+  background: #f5f7fb;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, input, select { font: inherit; }
+
+.page-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 48px 20px;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255, 166, 105, .22), transparent 25rem),
+    radial-gradient(circle at 92% 92%, rgba(99, 76, 255, .15), transparent 28rem),
+    #f6f8fc;
+}
+
+.calculator-card {
+  width: min(100%, 720px);
+  padding: 38px;
+  background: rgba(255, 255, 255, .96);
+  border: 1px solid rgba(228, 233, 243, .9);
+  border-radius: 28px;
+  box-shadow: 0 20px 45px rgba(38, 53, 75, .12);
+}
+
+.hero { text-align: center; margin-bottom: 29px; }
+.eyebrow { margin: 0 0 2px; color: #f16635; font-weight: 600; font-size: .92rem; letter-spacing: .08em; }
+h1 { margin: 0; font: 800 clamp(2rem, 5vw, 2.75rem)/1.12 'Plus Jakarta Sans', Kanit, sans-serif; letter-spacing: -.06em; color: #20324c; }
+.subtitle { margin: 5px 0 18px; font-size: 1.18rem; color: #77859a; }
+.brand-mark { display: grid; justify-items: center; color: #f16031; line-height: 1; }
+.brand-mark span { font-size: 2.8rem; height: 40px; }
+.brand-mark strong { font: 800 .67rem/1 'Plus Jakarta Sans', sans-serif; letter-spacing: .09em; }
+
+.people-grid, .bottle-grid { display: grid; gap: 18px; grid-template-columns: 1fr 1fr; }
+.field { display: grid; gap: 7px; color: #4c5e76; font-size: 1.05rem; font-weight: 500; }
+.field small, .radio-option small { color: #718199; font-size: .9em; font-weight: 400; }
+input[type='number'], select {
+  width: 100%; height: 54px; padding: 10px 14px;
+  color: #253651; background: #fff;
+  border: 2px solid #e2e7ee; border-radius: 12px;
+  outline: 0; transition: border-color .18s, box-shadow .18s;
+}
+input[type='number']:focus, select:focus { border-color: #5942f5; box-shadow: 0 0 0 4px rgba(89, 66, 245, .12); }
+input:disabled { background: #f3f5f8; color: #a2acba; cursor: not-allowed; }
+
+.drink-box { margin: 26px 0 22px; padding: 12px 18px 18px; border: 2px solid #e6eaf0; border-radius: 14px; }
+.drink-box legend { padding: 0 7px; color: #4c5e76; font-size: 1.08rem; font-weight: 500; }
+.radio-option { display: flex; gap: 10px; align-items: center; margin: 9px 0; color: #283953; font-size: 1.08rem; cursor: pointer; }
+input[type='radio'] { width: 20px; height: 20px; margin: 0; accent-color: #3e7df5; }
+.bottle-grid { margin: 17px 6px 0; }
+.discount-field { margin-top: 24px; }
+select { appearance: auto; cursor: pointer; }
+.hint { margin-top: -2px; color: #8491a4; }
+.error { margin: 19px 0 0; padding: 10px 14px; border-radius: 9px; color: #b4293a; background: #fff0f1; font-size: .97rem; }
+
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 28px; }
+button { height: 55px; border: 0; border-radius: 12px; color: #fff; font-weight: 600; font-size: 1.15rem; cursor: pointer; transition: transform .15s, filter .15s; }
+button:hover { filter: brightness(1.04); transform: translateY(-1px); }
+button:active { transform: translateY(0); }
+.calculate-button { background: linear-gradient(135deg, #5f38ee, #4432e9); box-shadow: 0 8px 16px rgba(78, 53, 232, .23); }
+.reset-button { background: linear-gradient(135deg, #ff4a4c, #f92736); box-shadow: 0 8px 16px rgba(249, 39, 54, .18); }
+
+.total-panel { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 7px; margin-top: 28px; padding: 19px 15px; border-radius: 13px; color: #536078; background: #eef2ff; font-size: 1.15rem; }
+.total-panel strong { color: #4b32ed; font: 800 1.65rem/1 'Plus Jakarta Sans', Kanit, sans-serif; letter-spacing: -.04em; }
+.total-panel small { flex-basis: 100%; text-align: center; color: #76839a; font-size: .84rem; }
+
+@media (max-width: 560px) {
+  .page-shell { padding: 20px 12px; place-items: start center; }
+  .calculator-card { padding: 28px 18px; border-radius: 20px; }
+  .people-grid, .bottle-grid { grid-template-columns: 1fr; }
+  .drink-box { padding: 10px 12px 16px; }
+  .bottle-grid { margin-left: 0; margin-right: 0; }
+  .actions { gap: 12px; }
+}
